@@ -10,23 +10,4 @@ resource "helm_release" "wordpress" {
   chart      = "wordpress"
   namespace = kubernetes_namespace.wordpress.metadata[0].name
 
-  #   values = [
-  #     "${file("values.yaml")}"
-  #   ]
-
-  #   set {
-  #     name  = "cluster.enabled"
-  #     value = "true"
-  #   }
-
-  #   set {
-  #     name  = "metrics.enabled"
-  #     value = "true"
-  #   }
-
-  #   set {
-  #     name  = "service.annotations.prometheus\\.io/port"
-  #     value = "9127"
-  #     type  = "string"
-  #   }
 }

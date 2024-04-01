@@ -12,7 +12,7 @@ resource "helm_release" "router" {
 }
 
 resource "helm_release" "minecraft" {
-  name       = "mc-router"
+  name       = <fill-in>
   repository = "https://itzg.github.io/minecraft-server-charts/"
   chart      = "minecraft"
   namespace = kubernetes_namespace.minecraft.metadata[0].name
