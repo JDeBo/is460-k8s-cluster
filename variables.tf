@@ -20,3 +20,9 @@ variable "vpc_cidr" {
   type        = string
   default     = "10.42.0.0/16"
 }
+
+variable "deploy_helm" {
+  description = "Whether helm should get deployed or not"
+  type        = bool
+  default     = false
+}

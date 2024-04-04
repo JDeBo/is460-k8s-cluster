@@ -5,7 +5,7 @@ nuke:
 	@terraform destroy -auto-approve
 	
 up:
-	@terraform apply -auto-approve
+	@terraform apply -auto-approve -var deploy_helm=true
 
 init:
 	@terraform init

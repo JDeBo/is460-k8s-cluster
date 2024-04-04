@@ -46,6 +46,7 @@ resource "aws_eks_addon" "ebs_csi_driver" {
 }
 
 module "helm" {
+  count = var.deploy_helm ? 1 : 0
   source       = "./modules/helm"
   cluster_name = aws_eks_cluster.this.name
 }
