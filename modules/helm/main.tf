@@ -1,5 +1,6 @@
 variable "cluster_name" {
   type = string
+  default = "test-eks"
 }
 
 provider "kubernetes" {

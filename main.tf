@@ -44,8 +44,3 @@ resource "aws_eks_addon" "ebs_csi_driver" {
   # addon_version     = "v1.28.0"                      # Specify the version; adjust as necessary
   resolve_conflicts_on_update = "OVERWRITE" # Overwrite conflicts if they exist
 }
-
-module "helm" {
-  source       = "./modules/helm"
-  cluster_name = aws_eks_cluster.this.name
-}
