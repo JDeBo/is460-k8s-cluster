@@ -1,12 +1,12 @@
 resource "kubernetes_namespace" "wordpress" {
   metadata {
-    name = <fill-in>
+    name = "wordpress"
   }
 }
 
 resource "helm_release" "wordpress" {
-  name       = <fill-in>
-  repository = <fill-in>
-  chart      = <fill-in>
+  name       = "wordpress"
+  repository = "https://charts.bitnami.com/bitnami"
+  chart      = "wordpress"
   namespace = kubernetes_namespace.wordpress.metadata[0].name
 }
