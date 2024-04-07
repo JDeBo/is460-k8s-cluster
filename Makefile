@@ -1,5 +1,5 @@
 down:
-	@terraform destroy --target aws_eks_node_group.this --target module.helm --auto-approve
+	@terraform destroy --target aws_eks_node_group.this --auto-approve
 
 nuke:
 	@terraform destroy -auto-approve

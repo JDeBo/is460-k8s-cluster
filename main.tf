@@ -26,6 +26,7 @@ resource "aws_eks_node_group" "this" {
   node_group_name = "test-managed-node-group"
   node_role_arn   = data.aws_iam_role.cluster_role.arn
   subnet_ids      = module.vpc.private_subnets
+  capacity_type = "SPOT"
 
   scaling_config {
     desired_size = 3
