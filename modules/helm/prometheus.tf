@@ -32,6 +32,10 @@ resource "helm_release" "grafana" {
     name  = "adminPassword"
     value = random_password.grafana.result
   }
+  set {
+    name  = "persistence.enabled"
+    value = true
+  }
 }
 
 resource "random_password" "grafana" {
