@@ -7,6 +7,9 @@ nuke:
 up:
 	@terraform apply -auto-approve
 
+plan:
+	@terraform plan
+	
 init:
 	@./init.sh
 	@terraform init
