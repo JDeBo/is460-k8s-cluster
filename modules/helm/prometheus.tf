@@ -22,7 +22,7 @@ resource "helm_release" "prometheus" {
 resource "helm_release" "grafana" {
   name       = "grafana"
   repository = "https://grafana.github.io/helm-charts"
-  chart      = "kube-prometheus-stack"
+  chart      = "grafana"
   namespace  = kubernetes_namespace.monitoring.metadata[0].name
   set {
     name  = "service.type"
