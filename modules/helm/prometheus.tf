@@ -28,4 +28,12 @@ resource "helm_release" "grafana" {
     name  = "service.type"
     value = "LoadBalancer"
   }
+  set {
+    name  = "adminPassword"
+    value = random_password.grafana.result
+  }
+}
+
+resource "random_password" "grafana" {
+  length = 8
 }
