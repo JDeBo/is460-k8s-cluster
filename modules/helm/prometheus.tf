@@ -37,3 +37,7 @@ resource "helm_release" "grafana" {
 resource "random_password" "grafana" {
   length = 8
 }
+
+output "grafana_password" {
+  value = random_password.grafana.result
+}
