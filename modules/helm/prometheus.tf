@@ -10,7 +10,26 @@ resource "helm_release" "prometheus" {
   chart      = "kube-prometheus-stack"
   namespace  = kubernetes_namespace.monitoring.metadata[0].name
   set {
-    name  = "service.type"
+    name  = "prometheusOperator.service.type"
     value = "LoadBalancer"
+  }
+  set {
+    name  = "grafana.ingress.enabled"
+    value = "true"
+  }
+  set {
+    name  = "grafana.ingress.ingressClassName"
+    value = "nginx"
+  }
+
+}
+
+resource "kubernetes_ingress_class_v1" "nginx" {
+  metadata {
+    name = "nginx"
+  }
+
+  spec {
+    controller = "k8s.io/ingress-nginx"
   }
 }
